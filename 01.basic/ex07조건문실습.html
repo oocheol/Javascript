@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. java, 안드로이드, web 세 과목의 점수를 입력받아주자!
+    let java = Number(prompt('Java 점수 입력해주세요'))
+    let android = Number(prompt('Android 점수 입력해주세요'))
+    let web = Number(prompt('Web 점수 입력해주세요'))
+
+    // 2. 1에서 입력받은 정수로 총점, 평균점수, 등급을 설정해주자!
+    //  2-1. 단, 평균 점수는 소수점 없이 출력되도록 하자
+    let totalScore = java + android + web
+    let res = totalScore / 3
+    res = parseInt(res)
+    //  ** 소수점 2자리까지 50.00, 50.12
+    let avgScore = (totalScore/3).toFixed(2)
+    console.log(avgScore)
+
+    //  2-2. 등급은 평균 점수가 90점 이상일 땐 A / 80점 이상 B / 70점 C / 60점 D / 그 외 F
+
+    
+    let res2 = ''
+
+    // switch(parseInt(res/10)){
+    //   case 10:
+    //   case 9:
+    //     res2 = 'A'
+    //     break
+    //   case 8:
+    //     res2 = 'B'
+    //     break
+    //   case 7:
+    //     res2 = 'C'
+    //     break
+    //   case 6:
+    //     res2 = 'D'
+    //     break
+    //   default:
+    //     res2 = 'F'
+    // }
+
+    if (res >= 90){
+      res2 = 'A'
+    } else if (res >= 80){
+      res2 = 'B'
+    } else if (res >= 70){
+      res2 = 'C'
+    } else if (res >= 60){
+      res2 = 'D'
+    } else{
+      res2 = 'F'
+    }
+      
+    // 3. 결과값 출력
+    // 당신의 평균은 XX점이고, 당신의 등급은 X입니다.
+    console.log('당신의 평균은 '+res+'점이고, 당신의 등급은 '+res2+'입니다.')
+
+  </script>
+</body>
+</html>
