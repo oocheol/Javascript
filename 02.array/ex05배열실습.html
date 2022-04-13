@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, td, th{
+      border: 1px solid;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // (1) 과목 수 입력
+    let num = Number(prompt('과목 수 입력'));
+    let topic = [];
+    let score = [];
+    let total = 0;
+
+    for (let i = 0; i < num;i++){
+      // (2) 과목 수만큼 이름를 입력할 수 있는 입력창
+      topic.push(prompt('점수를 입력할 과목을 입력하세요.'))
+    }
+    for (let i = 0; i < num;i++){
+      // (3) 각 과목들의 점수를 입력할 수 있는 입력창
+      score.push(Number(prompt(topic[i] + '의 점수를 입력')))
+      total += score[i]
+    }
+    
+    // (4) 각 과목들의 점수, 총점, 평균 점수 도출
+    avg = parseInt(total/topic.length)
+    // (5) 각 점수, 총합, 평균을 HTML 문서 내에 테이블로 출력
+    // ** HTML 문서 내에 적고싶을떈? document.write() 
+    document.write("<table>");
+      for (let i = 0; i < topic.length; i++) {
+			document.write("<th> "+ topic[i] +" </th>");
+		}
+    document.write("<th>총점</th>")
+    document.write("<th>평균</th>")
+
+    document.write("<tr>");
+      for (let i = 0; i < score.length; i++) {
+			document.write("<td> "+ score[i] +" </td>");
+		}
+    document.write("<td> "+ total +" </td>");
+    document.write("<td> "+ avg +" </td>");
+    document.write("</tr>");
+
+    document.write("</table>");
+
+  </script>
+</body>
+</html>

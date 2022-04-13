@@ -8,14 +8,21 @@
 </head>
 <body>
   <script>
+    
     // 홀수, 홀수의 갯수 구하기
     let list = [1,2,3,4,5,6,7,8];
 
     // 홀수를 넣어줄 수 있는 배열
     let listHole = [];
+    let cnt = 0;
     
     for (let i=0;i<list.length;i++){
       if (list[i]%2 == 1){
+        // Case 1
+        // listHole[cnt] = list[i];
+        // cnt++;
+        
+        // Case 2
         listHole.push(list[i])
       }
     }
