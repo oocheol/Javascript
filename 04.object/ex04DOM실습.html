@@ -13,26 +13,21 @@
     <button onclick="mkUl()">ul태그 생성</button>
     <!-- div는 생성한 태그를 누적할 공간-->
     <div id="div1"></div>
-    <!--
-    // 1. 글자를 누적해줄 공간인 div 가지고 오기 
-    // 2. 함수 별로 가지고 온 div 태그 안에 태그 생성하기!
-    // (단, 누적의 형태로 생성된다. )
-    -->
-
+    
     <script>
-      let str = '';
+      // 1. 글자를 누적해줄 공간인 div 가지고 오기 
       let div = document.getElementById('div1');
+
+      // 2. 함수 별로 가지고 온 div 태그 안에 태그 생성하기!
+      // (단, 누적의 형태로 생성된다. )
       function mkH1(){
-        str = '<h1>DOM 활용하기</h1>'
-        div.innerHTML += str;
+        div.innerHTML += '<h1>DOM 활용하기</h1>';
       }
       function mkA(){
-        str = '<a href="google.com">Google로 이동</a> <br>'
-        div.innerHTML += str;
+        div.innerHTML += '<a href="google.com">Google로 이동</a> <br>';
       }
       function mkUl(){
-        str = '<ul><li>HTML</li> <li>CSS</li> <li>JS</li></ul>'
-        div.innerHTML += str;
+        div.innerHTML += '<ul><li>HTML</li> <li>CSS</li> <li>JS</li></ul>';
       }
     </script>
 </body>
