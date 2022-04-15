@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="https://images.gameinfo.io/pokemon/256/p6f438.png"
+  width="300px"
+  id="img1">
+  <br>
+  <button onclick="ch()">이미지 변경</button>
+
+  <script>
+    function ch(){
+      // let img = document.getElementById('img1');
+      // let img = document.querySelector("#img1");
+      let img = document.querySelectorAll("img")[0];
+
+      // 1번 사진이라면 2번으로 변경
+      if (img.src == "https://images.gameinfo.io/pokemon/256/p6f438.png"){
+      img.src = "https://m.figurepresso.com/web/product/big/202112/61c96518cd024b051d8ebe98592e7e3a.jpg"
+      } else{
+        // 아니라면 다시 1번으로 변경
+        img.src = "https://images.gameinfo.io/pokemon/256/p6f438.png"
+      }
+    }
+  </script>
+
+
+
+</body>
+</html>
