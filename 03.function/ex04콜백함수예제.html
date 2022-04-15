@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">Click!😲</button>
+  <div id="numList"></div>
+
+  <script>
+    // 1. id가 numList인 div 공간 가져오기
+    let div = document.querySelector('#numList')
+    // 2. 문서 내에 타이머 만들기
+    for (let i = 1; i<= 3; i++){
+      setTimeout(function(){
+        div.innerHTML += i+'초 <br>';
+      },1000*i);
+    }
+    // 3. 버튼을 클릭했을 때, click!라고 나타나게 해주기!
+    document.querySelector('.btn').addEventListener('click',function(){
+      div.innerHTML += 'Click! <br>';
+      });
+  </script>
+</body>
+</html>
