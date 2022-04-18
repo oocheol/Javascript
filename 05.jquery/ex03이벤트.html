@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>손지영 아기천사</h1>
+  <h1>손지영 아기천사2</h1>
+  <button id="btn">디자인변경</button>
+
+  <script>
+    // 1. 버튼을 클릭했을 때 h1의 글자색을 파란색으로 변경
+    // 1-1. 순수한 js문법
+    // document.getElementById('btn').addEventListener('click', function() {
+    //   document.getElementById('txt').style.color = 'blue';
+    // });
+
+    // 1-2. 제이쿼리 문법으로 이벤트 작성
+    $('#btn').on("click", function(){
+      $('#txt').css("color", "blue");
+    })
+
+    // 2. h1태그의 마우스를 올렸을 때 글자색을 변경
+    // $('#txt').on("mouseover",function(){
+    //   $('#txt').css("color", "red");
+    // })
+
+    // 3. h1태그에 마우스를 땠을 때 글자색을 검정색으로 변경
+    $('h1').on("mouseover",function(){
+      $('h1').css("color", "red");
+    })
+    $('h1').on("mouseout",function(){
+      $(this).css("color", "black");
+    })
+
+
+  </script>
+
+</body>
+</html>

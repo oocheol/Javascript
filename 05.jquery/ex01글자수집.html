@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1 id="txt">제이쿼리를 통해서 글자 수집!</h1>
+
+  <script>
+
+    // 1. 제이쿼리를 통해서 글자 수집
+    // 1-1. .html() = 태그정보를 지원하겠다.
+    // 1-2. .text() = 태그정보를 지원하지 않겠다.
+    // 1-3. 수집할 때(get) .html() , .text()
+    // 1-4. 수정할 때(get) .html('수정할 값'), .text('수정할 값')
+
+    let txt1 = document.getElementById('txt').innerText;
+    console.log("순수 js문법 : " + txt1);
+
+    // 제이쿼리의 요소 접근법 : $('선택자')
+    let txt2 = $("#txt").text();
+    console.log("제이쿼리 문법 : " + txt2);
+    
+    // 수정하기
+    $("#txt").text("수정");
+
+    // 오류코드 : $ is not defined
+    // 발생하는 이유 : 제이쿼리를 임포트 하지 않았기때문!
+    // 해결방법 : 1. 파일을 직접 임포트 / 2. CDN(네트워크) 임포트
+    // 임포트 위치 : 1. head 영역 / 2. 바디태그의 맨 마지막부분
+
+
+  </script>
+
+</body>
+</html>

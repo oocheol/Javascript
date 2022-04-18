@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <script>
+    $('#txt').css("color","blue");
+    // 1. 변경이 되지 않는 이유는 : html(dom요소)가 생성이 되기 전에 접근했기 때문
+    // 2. 실행순서를 변경 > 모든 html(dom요소)가 생성이 된 후에 실행
+    $(document).ready(function(){
+      $('#txt').css("color","blue");
+    })
+  </script>
+
+  <h1 id="txt">디자인 수정</h1>
+  <!-- <script>
+    // 1. 제이쿼리 스타일 변경 방법
+    // 1-1 css("속성","값");
+
+    // $('#txt').css("color","blue");
+    // $('#txt').css("font-size","100px");
+
+    // 1-2. 다중스타일 제어
+    $('#txt').css({
+      "color" : "blue",
+      "font-size" : "100px"
+    });
+
+  </script> -->
+  
+
+</body>
+</html>
