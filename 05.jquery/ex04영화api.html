@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <button id="btn">요청</button>
+
+  <div id="txt"></div>
+
+  <script>
+    // 1. 요청버튼을 클릭했을 때 api를 통해서 데이터를 받아오기
+    // 2. 받아온 데이터에서 영화의 이름만 출력
+    $("#btn").on("click",function(){
+      // 제이쿼리를 활용한 ajax 기본 구조
+
+      $.ajax({
+        // 1. 요청할 서버의 주소 입력
+        url : "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=4b4d78723ba57a2642627938ce5137f2&targetDt=20220417",
+        // 2. 요청방식(get, post)
+        type : "get",
+        // 3. 보낼데이터 있으면 데이터 보내기! (필수 X)
+        // data : {"id" : "123"},
+        // 4. 통신에 성공했을 때, 실패했을 때 작성
+        success : function(res){
+          // console.log(res.boxOfficeResult.weeklyBoxOfficeList[0].movieNm);
+          // let movieNm = res.boxOfficeResult.weeklyBoxOfficeList[0].movieNm;
+          // $("#txt").html("<h1> "+ movieNm +" </h1>");
+          // 1. 응답 데이터에서 원하는 데이터 꺼내오기 tip!
+          // 1-1. 객체인 경우 -> 객체이름.key
+          // 1-2. 배열인 경우 -> 배열이름[인덱스]
+
+          for (let i = 0; i<res.boxOfficeResult.weeklyBoxOfficeList.length; i++){
+            console.log(res.boxOfficeResult.weeklyBoxOfficeList[i].movieNm);
+          }
+          
+        },
+        error : function(){
+          alert("통신 실패!")
+        }
+      })
+    })
+
+  </script>
+
+</body>
+</html>
